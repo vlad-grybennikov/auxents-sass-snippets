@@ -1,0 +1,13 @@
+@import "../../auxents";
+
+// Simple resets for example
+*{
+  margin:0;
+  padding:0;
+}
+
+$wrapper_bg: #dcdcdc;
+
+.close-icon{
+  @include close-icon(#0d71bb, 15px, 2px);
+}

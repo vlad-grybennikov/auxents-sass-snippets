@@ -1,0 +1,61 @@
+// Settings for wrapper
+$wrapper_bg: #fafafa;
+$left_gutter: 30px;
+$top_gutter: 20px;
+
+@mixin wrapper($width, $height){
+  &__wrapper{
+    height: $height + $top_gutter * 2;
+    width: $width + $left_gutter * 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $wrapper_bg;
+  }
+}
+
+@mixin menu-burger($color, $width, $height, $strip_height: 2px){
+  margin: 0 auto;
+  background-color: $color;
+  position: relative;
+  &::after, &::before, &{
+    width: $width;
+    height: $strip_height;
+    display: block;
+  }
+  &::after, &::before{
+    content: " ";
+    background-color: inherit;
+    position:absolute;
+  }
+  &::before{
+    top: round(-$height / 2);
+  }
+  &::after{
+    top: round($height / 2);
+  }
+  @include wrapper($width, $height);
+}
+
+@mixin close-icon($color, $side, $strip_height: 2px){
+  width: $side;
+  height: $side;
+  display: inline-block;
+  position: relative;
+  overflow:hidden;
+  &::before, &::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: round(1.41421356 * $side) - $strip_height;
+    transform: translate(-50%, -50%) rotate(45deg);
+    height: $strip_height;
+    background-color: $color;
+  }
+  &::after{
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  @include wrapper($side, $side);
+}

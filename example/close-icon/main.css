@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.close-icon {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden; }
+  .close-icon::before, .close-icon::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 19px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    height: 2px;
+    background-color: #0d71bb; }
+  .close-icon::after {
+    transform: translate(-50%, -50%) rotate(-45deg); }
+  .close-icon__wrapper {
+    height: 55px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dcdcdc; }
+
+/*# sourceMappingURL=main.css.map */
