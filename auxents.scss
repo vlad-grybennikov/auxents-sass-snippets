@@ -60,7 +60,14 @@ $top_gutter: 20px;
   @include wrapper($side, $side);
 }
 
-@mixin arrow($width, $height, $turn){
-
+@mixin arrow($width, $height, $turn, $strip_height: 2px){
+  width: $width;
+  height: $height;
+  display: inline-block;
+  &::before, &::after{
+    content: "";
+    display: block;
+    height: $strip_height;
+  }
   @include wrapper($width, $height);
 }

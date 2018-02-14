@@ -1,0 +1,40 @@
+{
+  "name": "auxents-sass-snippets",
+  "version": "1.0.0",
+  "description": "Control elements for your sliders, popups, mobile markup and other regular markup's tasks. You can find typycal elements like: arrows, menu \"burger\" icon, dots, close icon, also with basic animation.",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trostinsky/auxents-sass-snippets.git"
+  },
+  "keywords": [
+    "SASS",
+    "snippet",
+    "icons",
+    "menu",
+    "burger",
+    "arrows",
+    "slider",
+    "dots",
+    "square",
+    "triangle"
+  ],
+  "author": "https://github.com/trostinsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trostinsky/auxents-sass-snippets/issues"
+  },
+  "homepage": "https://github.com/trostinsky/auxents-sass-snippets#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-sass": "^3.1.0"
+  }
+}

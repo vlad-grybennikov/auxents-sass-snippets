@@ -58,4 +58,18 @@
     justify-content: center;
     background-color: #dcdcdc; }
 
-/*# sourceMappingURL=main.css.map */
+.arrow-left {
+  width: 20px;
+  height: 10px;
+  display: inline-block; }
+  .arrow-left::before, .arrow-left::after {
+    content: "";
+    display: block;
+    height: 2px; }
+  .arrow-left__wrapper {
+    height: 50px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dcdcdc; }

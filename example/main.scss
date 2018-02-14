@@ -20,3 +20,6 @@ $wrapper_bg: #dcdcdc;
 .close-icon{
   @include close-icon(#0d71bb, 15px, 2px);
 }
+.arrow-left{
+  @include arrow(20px, 10px, left);
+}
