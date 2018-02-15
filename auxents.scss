@@ -1,3 +1,5 @@
+@import "./math";
+
 // Settings for wrapper
 $wrapper_bg: #fafafa;
 $left_gutter: 30px;
@@ -5,8 +7,8 @@ $top_gutter: 20px;
 
 @mixin wrapper($width, $height){
   &__wrapper{
-    height: $height + $top_gutter * 2;
-    width: $width + $left_gutter * 2;
+    height: calc(#{$height} + #{$top_gutter} * 2);
+    width: calc(#{$width} + #{$left_gutter} * 2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,14 +62,46 @@ $top_gutter: 20px;
   @include wrapper($side, $side);
 }
 
-@mixin arrow($width, $height, $turn, $strip_height: 2px){
+@mixin arrow($width, $height, $color, $turn: left, $strip_height: 2px){
+  // For calculate width of arrow part, I use formula: diagonal = sqrt(width * width + height * height) / 2
+  // So, cause SASS doesn't have square values for px, I clear numbers from "px" using my func "strip-unit"
+  // Then, I find unit value of numbers(in examples it's "px", but can be anything), I use unit() function
+  // Then, I concat my number valuse from half-diagonal formula with unit value
+  // Then, I clear this value from quotes using function unquote
+
+  // Formula:
+  $diagonal: sqrt(strip-unit($width)*  strip-unit($width) +  strip-unit($height) *  strip-unit($height)) / 2;
+  $part_width: unquote($diagonal + unit($width));
+  $cosAlpha: strip-unit($width) / 2 / $diagonal;
+  $beforeTop: null;
+  $afterTop: null;
+  @if($turn == left){
+    $beforeTop: 3 * $height / 4 - 1px;
+    $afterTop: $height / 4 + round($strip_height / 2);
+  }
+  @if($turn == right){
+    $afterTop: 3 * $height / 4 - 1px;
+    $beforeTop: $height / 4 + round($strip_height / 2);
+  }
   width: $width;
   height: $height;
   display: inline-block;
+  position: relative;
   &::before, &::after{
     content: "";
     display: block;
+    background-color: $color;
     height: $strip_height;
+    position: absolute;
+    width: $part_width;
+    content: "";
+    left: 50%;
+    top: $beforeTop;
+    transform: translate(-50%, -50%) rotate(#{arccos($cosAlpha)});
+  }
+  &::after{
+    top: $afterTop;
+    transform: translate(-50%, -50%) rotate(-#{arccos($cosAlpha)});
   }
   @include wrapper($width, $height);
 }

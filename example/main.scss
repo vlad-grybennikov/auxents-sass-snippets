@@ -14,12 +14,12 @@ $wrapper_bg: #dcdcdc;
   padding-left:30px;
 }
 .menu-burger{
-  @include menu-burger(#0d71bb, 25px, 15px);
+  @include menu-burger(#0d71bb, 25px, 14px);
 }
 
 .close-icon{
   @include close-icon(#0d71bb, 15px, 2px);
 }
 .arrow-left{
-  @include arrow(20px, 10px, left);
+  @include arrow(20px, 20px, #0d71bb, right, 4px);
 }
