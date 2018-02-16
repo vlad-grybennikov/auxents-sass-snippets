@@ -67,15 +67,16 @@
     content: "";
     display: block;
     background-color: #0d71bb;
-    height: 4px;
+    height: 2px;
     position: absolute;
     width: 14.14214px;
     content: "";
     left: 50%;
-    top: 7px;
+    top: 15px;
     transform: translate(-50%, -50%) rotate(0.7854rad); }
   .arrow-left::after {
-    top: 14px;
+    top: 6px;
+    left: 50%;
     transform: translate(-50%, -50%) rotate(-0.7854rad); }
   .arrow-left__wrapper {
     height: calc(20px + 20px * 2);
@@ -84,3 +85,60 @@
     align-items: center;
     justify-content: center;
     background-color: #dcdcdc; }
+
+.arrow-right {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  position: relative; }
+  .arrow-right::before, .arrow-right::after {
+    content: "";
+    display: block;
+    background-color: #0d71bb;
+    height: 2px;
+    position: absolute;
+    width: 14.14214px;
+    content: "";
+    left: 50%;
+    top: 6px;
+    transform: translate(-50%, -50%) rotate(0.7854rad); }
+  .arrow-right::after {
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-0.7854rad); }
+  .arrow-right__wrapper {
+    height: calc(20px + 20px * 2);
+    width: calc(20px + 30px * 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dcdcdc; }
+
+.arrow-top {
+  width: 50px;
+  height: 20px;
+  display: inline-block;
+  position: relative; }
+  .arrow-top::before, .arrow-top::after {
+    content: "";
+    display: block;
+    background-color: #0d71bb;
+    height: 2px;
+    position: absolute;
+    width: 26.92582px;
+    content: "";
+    left: 13.46291px;
+    transform: translate(-50%, -50%) rotate(0.38113rad); }
+  .arrow-top::after {
+    left: 28.92582px;
+    transform: translate(-50%, -50%) rotate(-0.38113rad); }
+  .arrow-top__wrapper {
+    height: calc(20px + 20px * 2);
+    width: calc(50px + 30px * 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dcdcdc; }
+
+.arrow-left__wrapper, .arrow-right__wrapper {
+  display: inline-flex; }
